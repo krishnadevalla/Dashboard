@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site2.master.cs" Inherits="Site2" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My Dashboard</title>
+    
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/CSS1/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style type="text/css">
+        .auto-style1 {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 273px;
+            height: 120%;
+        }
+    </style>
+    <LINK href="Content/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-69077622-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<body style="-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;">
+    <form runat="server">
+    <div style="background:rgba(50, 50, 50,0.5); background-repeat: no-repeat; background-attachment: fixed; " class="auto-style1">
+        
+        <table>
+            <tr>
+                <td colspan="3"><br /><br />
+                    <img src="img/logo.png" width="100%" />
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp</td>
+                <td>
+                    <asp:Menu ID="Menu1" runat="server" CssClass="navbar-left" Font-Bold="True" Font-Size="Large" RenderingMode="List">
+                        <Items>
+                            <asp:MenuItem Text="My Dashboard" NavigateUrl="Dashboard.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Settings" NavigateUrl="Settings.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Help" NavigateUrl="Help.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Logout" NavigateUrl="Homepage.aspx"></asp:MenuItem>
+                        </Items>
+                        <StaticMenuItemStyle ForeColor="lightgray" Font-Bold="True" Font-Names="Segoe UI Semibold" Font-Size="X-Large" />
+                        <StaticHoverStyle BackColor="orange" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle Font-Bold="True" BackColor="white" />
+                    </asp:Menu>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          </tr>
+        </table>
+        <div style="position:fixed;top:45%;right:87%" >
+    <iframe src="http://free.timeanddate.com/clock/i4we95hu/n788/szw110/szh110/hocf00/hbw0/hfc000/cf100/hnc000/fas20/facfff/fdi86/mqcfff/mqs2/mql3/mqw4/mqd70/mhcfff/mhs2/mhl3/mhw4/mhd70/mmv0/hhcfff/hhs2/hmcfff/hms2" frameborder="0" width="112" height="116"></iframe>
+     <script type="text/javascript" src="http://100widgets.com/js_data.php?id=106"></script>
+    </div>
+    </div>
+        <div id="main" style="position:relative;left:20%">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+   
+        </div>  
+            
+        <br /><br /><br /><br /><br /><br />
+            <footer style="position:fixed;bottom:0px;color:white">
+                <p class="auto-style3">&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+      
+      
+    </form> 
+</body>
+</html>
